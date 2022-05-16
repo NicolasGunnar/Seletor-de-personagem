@@ -12,3 +12,9 @@
   menos o internet explorer */
   src: url('../fontes/PILOT_COMMAND.otf');
 }
+
+@font-face {
+  font-family: 'bleach';
+  
+  src: url('../fontes/Bleach-8jnJ.ttf');
+}
