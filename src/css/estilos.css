@@ -38,12 +38,6 @@ main{
     text-transform: uppercase;
     font-size: 52px;
     line-height: 102px;
-
-    color: var(--cor-titulo-fraco);
-    text-transform: uppercase;
-    font-size: 52px;
-    line-height: 102px;
-    -webkit-text-stroke: 2px var(--cor-titulo-forte);
 }
 
 .selecao-de-personagens{
