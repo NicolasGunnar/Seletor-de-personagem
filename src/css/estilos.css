@@ -9,7 +9,7 @@ body{
 body::before{
     content: '';
 
-    background-image: url("../imagens/hueco_mundo.gif");
+    background-image: url("../imagens/mp4.gif");
 
     background-repeat: no-repeat;
     background-size: cover;
