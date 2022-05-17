@@ -1,11 +1,16 @@
 body{
+
+    font-family: 'bleach', Courier, monospace;
+
     font-family: 'bleach', Courier, monospace;
     background: var(--cor-secundaria);
 }
 
 body::before{
     content: '';
+
     background-image: url("../imagens/hueco_mundo.gif");
+
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -28,10 +33,17 @@ main{
 }
 
 .cabecalho .titulo{
+
     color: var(--cor-vermelha-principal);
     text-transform: uppercase;
     font-size: 52px;
     line-height: 102px;
+
+    color: var(--cor-titulo-fraco);
+    text-transform: uppercase;
+    font-size: 52px;
+    line-height: 102px;
+    -webkit-text-stroke: 2px var(--cor-titulo-forte);
 }
 
 .selecao-de-personagens{
