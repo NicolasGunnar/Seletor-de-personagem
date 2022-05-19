@@ -13,31 +13,45 @@
 */
 
 const personagens = document.querySelectorAll(".personagem");
-
+let jogadorSelecionado = 'jogador-1'
+let personagemSelecionado1 = ''
 personagens.forEach((personagem) => {
+  personagem.addEventListener("click", () => {
+    jogadorSelecionado = 'jogador-2'
+    personagemSelecionado1 = personagem.attributes.id.value
+  })
   personagem.addEventListener("mouseenter", () => {
 
     const idSelecionado = personagem.attributes.id.value;
 
-    if(idSelecionado === 'aizen') return;
 
     /* 
         OBJETIVO 1
     */
-    const personagemSelecionado = document.querySelector(".selecionado");
-    personagemSelecionado.classList.remove("selecionado");
+   const selecionando = jogadorSelecionado === 'jogador-1' ? "selecionado": "jogador-2-selecionado"
+    const personagemSelecionado = document.querySelector(`.${selecionando}`);
+    if (personagemSelecionado) {
+      personagemSelecionado.classList.remove(selecionando);
+    }
 
-    personagem.classList.add("selecionado");
+    personagem.classList.add(selecionando);
 
     /* 
         OBJETIVO 2
     */
 
-    const imagemJogador1 = document.getElementById('personagem-jogador-1');
+    const imagemJogador1 = document.getElementById(`personagem-${jogadorSelecionado}`);
     imagemJogador1.src = `./src/imagens/${idSelecionado}.png`;
 
-    const nomeJogador1 = document.getElementById('nome-jogador-1');
+    const nomeJogador1 = document.getElementById(`nome-${jogadorSelecionado}`);
     const nomeSelecionado = personagem.getAttribute('data-name');
+    const tagSelecionado = personagem.getElementsByClassName('tag')
+    if (jogadorSelecionado === 'jogador-1') {
+      tagSelecionado[0].innerHTML = '1P'
+    }
+    else if (personagemSelecionado1 !== idSelecionado) {
+      tagSelecionado[0].innerHTML = '2P'
+    }
     
     nomeJogador1.innerHTML = nomeSelecionado;
   });
